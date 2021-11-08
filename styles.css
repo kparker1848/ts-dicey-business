@@ -1,0 +1,17 @@
+.die-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.die-style {
+    display: inherit;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+    border-style: solid;
+    border-color: black;
+    border-radius: 25%;
+    background-color:lavenderblush;
+    color: black;
+}
