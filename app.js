@@ -2,8 +2,7 @@ var dieArray = [];
 var divCount = 1;
 var rollDieButton = document.createElement("button");
 rollDieButton.id = "rollDieButton";
-var buttonText = document.createTextNode("Roll Die");
-rollDieButton.append(buttonText);
+rollDieButton.innerHTML = "Roll Die";
 document.body.append(rollDieButton);
 document.getElementById("rollDieButton").addEventListener("click", function () {
     dieArray.forEach(function (die) { return die.roll(); });
@@ -16,9 +15,8 @@ document.getElementById("newDieButton").addEventListener("click", function () {
     new Die();
 });
 var sumDieButton = document.createElement("button");
-var sumDieText = document.createTextNode("Add All Die");
+sumDieButton.innerHTML = "Add All Die";
 sumDieButton.setAttribute("id", "sumDieButton");
-sumDieButton.append(sumDieText);
 document.body.append(sumDieButton);
 document.getElementById("sumDieButton").addEventListener("click", function () {
     sumDice();
@@ -43,9 +41,9 @@ var Die = /** @class */ (function () {
         divCount++;
     }
     Die.prototype.roll = function () {
+        this.div.innerHTML = "";
         var dieValue = randomVal(1, 7);
-        var divText = document.createTextNode("" + dieValue);
-        this.div.append(divText);
+        this.div.innerHTML = ("" + dieValue);
     };
     ;
     Die.prototype.removeDie = function () {

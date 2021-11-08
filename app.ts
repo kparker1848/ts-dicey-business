@@ -3,8 +3,7 @@ let divCount: number = 1;
 
 const rollDieButton = document.createElement("button");
 rollDieButton.id = "rollDieButton";
-const buttonText = document.createTextNode("Roll Die");
-rollDieButton.append(buttonText);
+rollDieButton.innerHTML = "Roll Die";
 document.body.append(rollDieButton);
 document.getElementById("rollDieButton").addEventListener("click", () => {
     dieArray.forEach((die) => die.roll());
@@ -20,9 +19,8 @@ document.getElementById("newDieButton").addEventListener("click", () => {
 });
 
 const sumDieButton = document.createElement("button");
-const sumDieText = document.createTextNode("Add All Die");
+sumDieButton.innerHTML ="Add All Die";
 sumDieButton.setAttribute("id", "sumDieButton");
-sumDieButton.append(sumDieText);
 document.body.append(sumDieButton);
 document.getElementById("sumDieButton").addEventListener("click", () => {
     sumDice();
@@ -50,9 +48,9 @@ class Die {
     }
 
     roll() {
+        this.div.innerHTML = "";
         let dieValue = randomVal(1, 7);
-        let divText = document.createTextNode(`${dieValue}`)
-        this.div.append(divText);
+        this.div.innerHTML = (`${dieValue}`);
     };
 
     removeDie() {
